@@ -3,6 +3,7 @@ package Test_Scripts;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Config.PropertiesFile;
@@ -25,13 +26,16 @@ public class Main_Test_Script {
 	String ProjectPath = System.getProperty("user.dir");
 
 	@BeforeTest
-	public void beforeTest() {
+	public void SetUp() {
 		//start reporters
 		htmlReporter = new ExtentHtmlReporter(ProjectPath+"//Reports//report.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
+
+		// creates a toggle for the given test, adds all log events under it    
+		ExtentTest setup = extent.createTest("SetUp");
 
 		//Calling getproperties method in Properties file
 		PropertiesFile.GetProperties();
@@ -44,19 +48,26 @@ public class Main_Test_Script {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
+		setup.info("Browser Opened");
 		
 		//Opening the page
 		driver.get(Url);
 		driver.manage().window().maximize();
+		setup.info("Website Opened");
 	}
 
 	@Test
-	public void test() {
+	public void Login() {
+		
 	}
 
 
 	@AfterTest
-	public void afterTest() {
+	public void TearDown() {
+		driver.close();
+
+		// calling flush writes everything to the log file
+		extent.flush();
 	}
 
 }

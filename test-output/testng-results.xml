@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7310" started-at="2019-03-20T12:44:50Z" finished-at="2019-03-20T12:44:57Z">
+  <suite name="Default suite" duration-ms="8998" started-at="2019-03-21T04:39:52Z" finished-at="2019-03-21T04:40:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7310" started-at="2019-03-20T12:44:50Z" finished-at="2019-03-20T12:44:57Z">
+    <test name="Default test" duration-ms="8998" started-at="2019-03-21T04:39:52Z" finished-at="2019-03-21T04:40:01Z">
       <class name="Test_Scripts.Main_Test_Script">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="beforeTest" is-config="true" duration-ms="7272" started-at="2019-03-20T12:44:50Z" finished-at="2019-03-20T12:44:57Z">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="SetUp" is-config="true" duration-ms="8328" started-at="2019-03-21T04:39:52Z" finished-at="2019-03-21T04:40:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="test()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="test" duration-ms="6" started-at="2019-03-20T12:44:57Z" finished-at="2019-03-20T12:44:57Z">
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="test()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="test" duration-ms="22" started-at="2019-03-21T04:40:01Z" finished-at="2019-03-21T04:40:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-03-20T12:44:57Z" finished-at="2019-03-20T12:44:57Z">
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="TearDown" is-config="true" duration-ms="577" started-at="2019-03-21T04:40:01Z" finished-at="2019-03-21T04:40:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
+        </test-method> <!-- TearDown -->
       </class> <!-- Test_Scripts.Main_Test_Script -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
