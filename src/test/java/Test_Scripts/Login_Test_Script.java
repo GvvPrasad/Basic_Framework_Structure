@@ -3,7 +3,6 @@ package Test_Scripts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import Pages.Login_Page;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Login_Test_Script {
@@ -14,7 +13,8 @@ public class Login_Test_Script {
 		WebDriver driver = new ChromeDriver();
 
 		//Open Browser
-		driver.get("https://www.google.com/");
+		driver.get("https://orangehrm-demo-6x.orangehrmlive.com/");
+		
 	}
 
 }
