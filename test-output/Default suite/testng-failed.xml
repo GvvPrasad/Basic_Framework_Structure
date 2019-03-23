@@ -5,9 +5,9 @@
     <classes>
       <class name="Test_Scripts.Main_Test_Script">
         <methods>
-          <include name="test"/>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
+          <include name="TearDown"/>
+          <include name="SetUp"/>
+          <include name="Login"/>
         </methods>
       </class> <!-- Test_Scripts.Main_Test_Script -->
     </classes>

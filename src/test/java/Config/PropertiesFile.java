@@ -28,7 +28,6 @@ public class PropertiesFile {
 			String Url = Prop.getProperty("Url");
 			Main_Test_Script.BrowserName = Browser;
 			Main_Test_Script.Url = Url;
-			System.out.println(Browser);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
