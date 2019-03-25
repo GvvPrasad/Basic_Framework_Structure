@@ -107,8 +107,8 @@ public class Main_Test_Script {
 
 			Thread.sleep(3000);
 			//clear data
-			email.clear();
-			password.clear();
+			//email.clear();
+			//password.clear();
 
 			// Specify the message needs to be written.
 			String message = "Pass";
