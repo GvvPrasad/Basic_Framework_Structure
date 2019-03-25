@@ -80,13 +80,15 @@ public class Main_Test_Script {
 		FileInputStream Rfile = new FileInputStream(ProjectPath+"//Excel_File//TestData.xlsx");
 		//Get xlsx Excel File (Workbook)
 		WBfile = new XSSFWorkbook(Rfile);
-		//Get Sheet
-		Sfile = WBfile.getSheetAt(0);
-		setup.info("Excel file found");
+
 	}
 
 	@Test(priority=2)
 	public void Login() throws InterruptedException, IOException {
+		//Get Sheet
+		Sfile = WBfile.getSheetAt(0);
+		setup.info("Excel file found");
+		
 		for(int i=0; i<= Sfile.getLastRowNum(); i++)
 		{
 			// Import data for Email.
@@ -107,8 +109,8 @@ public class Main_Test_Script {
 
 			Thread.sleep(3000);
 			//clear data
-			//email.clear();
-			//password.clear();
+			email.clear();
+			password.clear();
 
 			// Specify the message needs to be written.
 			String message = "Pass";
