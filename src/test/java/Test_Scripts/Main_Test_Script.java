@@ -7,6 +7,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Config.PropertiesFile;
+import io.github.bonigarcia.wdm.DriverManagerType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.testng.annotations.BeforeTest;
@@ -24,6 +25,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 
@@ -37,10 +39,11 @@ public class Main_Test_Script {
 	public static String BrowserName;
 	public static String Url;
 	static String ProjectPath = System.getProperty("user.dir");
-	String FilePath = ProjectPath+"//Excel_File//TestData.xlsx";
+	static String FilePath = ProjectPath+"//Excel_File//TestData.xlsx";
 	static XSSFWorkbook WBfile;
 	static XSSFSheet Sfile;
 	static XSSFCell cell;
+	static FileOutputStream fileOutput;
 
 
 	@BeforeTest
@@ -60,11 +63,14 @@ public class Main_Test_Script {
 
 		//setting drivers
 		if (BrowserName.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
+			WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
 			driver = new ChromeDriver();
 		} else if (BrowserName.equalsIgnoreCase("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
 			driver = new FirefoxDriver();
+		}else if (BrowserName.equalsIgnoreCase("edge")) {
+			WebDriverManager.getInstance(DriverManagerType.EDGE).setup();
+			driver = new EdgeDriver();
 		}
 		setup.info("Browser Opened");
 
@@ -83,11 +89,11 @@ public class Main_Test_Script {
 	}
 
 	@Test(priority=2)
-	public static void Login() throws InterruptedException {
+	public static void Login() throws InterruptedException, IOException {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(0);
 		setup.info("Excel file found");
-		Login_Test_Script.SignIn(driver, Sfile, cell);
+		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile);
 	}
 
 	@AfterTest
