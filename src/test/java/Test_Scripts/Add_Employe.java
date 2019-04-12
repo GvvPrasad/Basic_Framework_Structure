@@ -7,7 +7,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
-
 import com.aventstack.extentreports.ExtentTest;
 
 import Locators.Add_Employe_Locators;
@@ -27,10 +26,12 @@ public class Add_Employe {
 			//Select Role
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
-			Add_Employe_Locators.SelectRole(driver);
-			
+			Add_Employe_Locators.SelectRole(driver).sendKeys(cell.getStringCellValue());
 			
 			//Enter Employer Name
+			cell = Sfile.getRow(i).getCell(0);
+			cell.setCellType(CellType.STRING);
+			Add_Employe_Locators.EmpName(driver).sendKeys(cell.getStringCellValue());
 			//Enter User Name
 			//Select Status
 			//Enter Passowrd
