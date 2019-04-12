@@ -93,7 +93,16 @@ public class Main_Test_Script {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(0);
 		setup.info("Excel file found");
+		setup.info("Login Data Found");
 		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile);
+	}
+	
+	@Test(priority=3)
+	public static void AddEmploye() throws InterruptedException, IOException {
+		//Get Sheet
+		Sfile = WBfile.getSheetAt(1);
+		setup.info("Admin Data Found");
+		Add_Employe.AddEmploye(driver, Sfile, cell, setup, FilePath, WBfile);
 	}
 
 	@AfterTest

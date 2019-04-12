@@ -41,7 +41,6 @@ public class Login_Test_Script {
 
 			String ExpectedUrl = "https://opensource-demo.orangehrmlive.com/index.php/dashboard";
 			String ActualUrl = driver.getCurrentUrl();
-			System.out.println(ActualUrl);
 			
 			//Local VAriable
 			String message;
