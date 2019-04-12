@@ -8,6 +8,7 @@
           <include name="TearDown"/>
           <include name="AddEmploye"/>
           <include name="SetUp"/>
+          <include name="Login"/>
         </methods>
       </class> <!-- Test_Scripts.Main_Test_Script -->
     </classes>

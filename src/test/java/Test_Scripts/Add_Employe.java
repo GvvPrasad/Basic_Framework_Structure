@@ -24,18 +24,35 @@ public class Add_Employe {
 		//Fill Form
 		for (int i = 0; i < Sfile.getLastRowNum(); i++) {
 			//Select Role
-			cell = Sfile.getRow(i).getCell(0);
+			/*cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
-			Add_Employe_Locators.SelectRole(driver).sendKeys(cell.getStringCellValue());
+			Add_Employe_Locators.SelectRole(driver);
+			*/
 			
 			//Enter Employer Name
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
 			Add_Employe_Locators.EmpName(driver).sendKeys(cell.getStringCellValue());
+			
 			//Enter User Name
+			cell = Sfile.getRow(i).getCell(1);
+			cell.setCellType(CellType.STRING);
+			Add_Employe_Locators.UserName(driver).sendKeys(cell.getStringCellValue());
+			
 			//Select Status
+			
 			//Enter Passowrd
+			cell = Sfile.getRow(i).getCell(2);
+			cell.setCellType(CellType.STRING);
+			Add_Employe_Locators.PassWord(driver).sendKeys(cell.getStringCellValue());
+			
 			//Enter Confirm Password
+			cell = Sfile.getRow(i).getCell(3);
+			cell.setCellType(CellType.STRING);
+			Add_Employe_Locators.ConfPassWord(driver).sendKeys(cell.getStringCellValue());
+			
+			//Save
+			Add_Employe_Locators.Save(driver).click();
 		}
 		Thread.sleep(5000);
 	}
