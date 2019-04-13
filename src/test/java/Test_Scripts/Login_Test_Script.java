@@ -23,20 +23,21 @@ public class Login_Test_Script {
 			cell.setCellType(CellType.STRING);
 			Login_Locators.UserName(driver).clear();
 			Login_Locators.UserName(driver).sendKeys(cell.getStringCellValue());
-			setup.info("Imported User Name");
+			setup.info("Enter User Name");
 
 			// Import data for password.
 			cell = Sfile.getRow(i).getCell(1);
 			cell.setCellType(CellType.STRING);
 			Login_Locators.PassWord(driver).clear();
 			Login_Locators.PassWord(driver).sendKeys(cell.getStringCellValue());
-			setup.info("Imported Password");
+			setup.info("Enter Password");
 
 			//Click submit
 			Login_Locators.Submit(driver).click();
+			setup.info("Click Submit");
 			Thread.sleep(5000);
 
-			String ExpectedUrl = "https://opensource-demo.orangehrmlive.com/index.php/dashboard";
+			String ExpectedUrl = "https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard";
 			String ActualUrl = driver.getCurrentUrl();
 			
 			//Local VAriable
@@ -45,9 +46,11 @@ public class Login_Test_Script {
 			if (ExpectedUrl.equalsIgnoreCase(ActualUrl)) {
 				// Specify the message needs to be written.
 				message = "Pass";
+				setup.info("Login Success");
 			} else {
 				// Specify the message needs to be written.
 				message = "Fail";
+				setup.info("Login Failed");
 			}
 
 			// Create cell where data needs to be written.
@@ -58,9 +61,6 @@ public class Login_Test_Script {
 
 			// finally write content
 			WBfile.write(fileOutput);
-
-			// close the file
-			fileOutput.close();
 		}
 	}
 
