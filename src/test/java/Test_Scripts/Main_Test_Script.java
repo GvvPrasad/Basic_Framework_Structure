@@ -9,12 +9,14 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import Config.PropertiesFile;
 import io.github.bonigarcia.wdm.DriverManagerType;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import multiScreenShot.MultiScreenShot;
 
 import org.testng.annotations.BeforeTest;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -40,6 +42,7 @@ public class Main_Test_Script {
 	static XSSFSheet Sfile;
 	static XSSFCell cell;
 	static FileOutputStream fileOutput;
+	static MultiScreenShot multiScreens;
 
 
 	@BeforeTest
@@ -53,7 +56,10 @@ public class Main_Test_Script {
 
 		// creates a toggle for the given test, adds all log events under it    
 		setup = extent.createTest("SetUp");
-
+		
+		//Setting Multi Screenshot
+		multiScreens = new MultiScreenShot(ProjectPath+"//", "ScreenShots");
+		
 		//Calling getproperties method in Properties file
 		PropertiesFile.GetProperties();
 
@@ -73,7 +79,11 @@ public class Main_Test_Script {
 		//Opening the page
 		driver.get(Url);
 		driver.manage().window().maximize();
-		setup.info("Website Opened");
+	}
+	
+	@Test(priority=0)
+	public static void Wait() {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@Test(priority=1)
@@ -82,25 +92,25 @@ public class Main_Test_Script {
 		FileInputStream Rfile = new FileInputStream(ProjectPath+"//Excel_File//TestData.xlsx");
 		//Get xlsx Excel File (Workbook)
 		WBfile = new XSSFWorkbook(Rfile);
+		setup.info("Excel File Found");
 	}
 
 	@Test(priority=2)
 	public static void Login() throws InterruptedException, IOException {
 		//Get Sheet
-		Sfile = WBfile.getSheetAt(0);
-		setup.info("Excel File Found");
+		Sfile = WBfile.getSheetAt(0);		
 		setup.info("Login Data Found");
-		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile);
+		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
-/*	
+
 	@Test(priority=3)
 	public static void AddEmploye() throws InterruptedException, IOException {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(1);
-		setup.info("Admin Data Found");
-		Add_Employe.AddEmploye(driver, Sfile, cell, setup, FilePath, WBfile);
+		setup.info("Job Data Found");
+		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
-*/
+
 	@AfterTest
 	public static void TearDown() {
 		driver.close();

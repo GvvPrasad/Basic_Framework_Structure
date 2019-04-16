@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19736" started-at="2019-04-13T07:30:17Z" finished-at="2019-04-13T07:30:37Z">
+  <suite name="Default suite" duration-ms="52886" started-at="2019-04-16T09:35:07Z" finished-at="2019-04-16T09:36:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19736" started-at="2019-04-13T07:30:17Z" finished-at="2019-04-13T07:30:37Z">
+    <test name="Default test" duration-ms="52886" started-at="2019-04-16T09:35:07Z" finished-at="2019-04-16T09:36:00Z">
       <class name="Test_Scripts.Main_Test_Script">
-        <test-method status="PASS" signature="SetUp()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="SetUp" is-config="true" duration-ms="8251" started-at="2019-04-13T07:30:17Z" finished-at="2019-04-13T07:30:26Z">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:Test_Scripts.Main_Test_Script@77f99a05]" name="SetUp" is-config="true" duration-ms="8419" started-at="2019-04-16T09:35:07Z" finished-at="2019-04-16T09:35:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method status="PASS" signature="Set_Excel()[pri:1, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="Set_Excel" duration-ms="743" started-at="2019-04-13T07:30:26Z" finished-at="2019-04-13T07:30:26Z">
+        <test-method status="PASS" signature="Wait()[pri:0, instance:Test_Scripts.Main_Test_Script@77f99a05]" name="Wait" duration-ms="11" started-at="2019-04-16T09:35:15Z" finished-at="2019-04-16T09:35:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Wait -->
+        <test-method status="PASS" signature="Set_Excel()[pri:1, instance:Test_Scripts.Main_Test_Script@77f99a05]" name="Set_Excel" duration-ms="636" started-at="2019-04-16T09:35:15Z" finished-at="2019-04-16T09:35:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Set_Excel -->
-        <test-method status="PASS" signature="Login()[pri:2, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="Login" duration-ms="10069" started-at="2019-04-13T07:30:26Z" finished-at="2019-04-13T07:30:37Z">
+        <test-method status="PASS" signature="Login()[pri:2, instance:Test_Scripts.Main_Test_Script@77f99a05]" name="Login" duration-ms="9848" started-at="2019-04-16T09:35:16Z" finished-at="2019-04-16T09:35:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="TearDown()[pri:0, instance:Test_Scripts.Main_Test_Script@1a3869f4]" name="TearDown" is-config="true" duration-ms="649" started-at="2019-04-13T07:30:37Z" finished-at="2019-04-13T07:30:37Z">
+        <test-method status="PASS" signature="AddEmploye()[pri:3, instance:Test_Scripts.Main_Test_Script@77f99a05]" name="AddEmploye" duration-ms="33201" started-at="2019-04-16T09:35:26Z" finished-at="2019-04-16T09:35:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddEmploye -->
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:Test_Scripts.Main_Test_Script@77f99a05]" name="TearDown" is-config="true" duration-ms="733" started-at="2019-04-16T09:35:59Z" finished-at="2019-04-16T09:36:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
