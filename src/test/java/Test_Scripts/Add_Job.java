@@ -27,7 +27,11 @@ public class Add_Job {
 		for (int i=0; i<= Sfile.getLastRowNum(); i++) {
 
 			Main_Test_Script.Wait();
-			Add_Job_Locators.AddJob(driver).click();
+			try {
+				Add_Job_Locators.AddJob(driver).click();
+			} catch (Exception e) {
+				multiScreens.multiScreenShot(driver);
+			}			
 			setup.info("Add Job");
 			Main_Test_Script.Wait();
 
