@@ -56,10 +56,10 @@ public class Main_Test_Script {
 
 		// creates a toggle for the given test, adds all log events under it    
 		setup = extent.createTest("SetUp");
-		
+
 		//Setting Multi Screenshot
 		multiScreens = new MultiScreenShot(ProjectPath+"//", "ScreenShots");
-		
+
 		//Calling getproperties method in Properties file
 		PropertiesFile.GetProperties();
 
@@ -80,7 +80,7 @@ public class Main_Test_Script {
 		driver.get(Url);
 		driver.manage().window().maximize();
 	}
-	
+
 	@Test(priority=0)
 	public static void Wait() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -109,6 +109,14 @@ public class Main_Test_Script {
 		Sfile = WBfile.getSheetAt(1);
 		setup.info("Job Data Found");
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
+	}
+
+	@Test(priority=4)
+	public static void SalComp() throws InterruptedException, IOException {
+		//Get Sheet
+		Sfile = WBfile.getSheetAt(2);
+		setup.info("Salarey Data Found");
+		Sal_Comp.SalComp(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
 
 	@AfterTest
