@@ -23,7 +23,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 
@@ -70,9 +69,6 @@ public class Main_Test_Script {
 		} else if (BrowserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
 			driver = new FirefoxDriver();
-		}else if (BrowserName.equalsIgnoreCase("edge")) {
-			WebDriverManager.getInstance(DriverManagerType.EDGE).setup();
-			driver = new EdgeDriver();
 		}
 		setup.info("Browser Opened");
 
@@ -104,7 +100,7 @@ public class Main_Test_Script {
 	}
 
 	@Test(priority=3)
-	public static void AddEmploye() throws InterruptedException, IOException {
+	public static void AddVacency() throws InterruptedException, IOException {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(1);
 		setup.info("Job Data Found");

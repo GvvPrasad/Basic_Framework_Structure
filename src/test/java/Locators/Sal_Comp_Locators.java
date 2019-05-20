@@ -14,37 +14,37 @@ public class Sal_Comp_Locators {
 
 	//Add Salary Components
 	public static WebElement AddComp(WebDriver driver) {
-		WebElement AddComp = driver.findElement(By.xpath("//*[@id=\"salaryComponentDiv\"]/div/a/i"));
-		return AddComp;
+		WebElement addcomp = driver.findElement(By.xpath("//div[@class='fixed-action-btn floating-add-btn tooltipped']"));
+		return addcomp;
 	}
 
 	//Add Components Name
 	public static WebElement CompName(WebDriver driver) {
-		WebElement CompName = driver.findElement(By.xpath("//*[@id=\"name\"]"));
-		return CompName;
+		WebElement compname = driver.findElement(By.xpath("//*[@id=\"name\"]"));
+		return compname;
 	}
 
 	//Add Components Type
 	public static WebElement CompType(WebDriver driver) {
-		WebElement CompType = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[2]/div/sf-decorator/div/ul/li[2]/label"));
-		return CompType;
+		WebElement comptype = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[2]/div/sf-decorator/div/ul/li[2]/label"));
+		return comptype;
 	}
 
 	//Add Components Add To
 	public static WebElement CompAddTo(WebDriver driver) {
-		WebElement CompAddTo = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[4]/div/sf-decorator[2]/div/label"));
-		return CompAddTo;
+		WebElement compaddto = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[4]/div/sf-decorator[2]/div/label"));
+		return compaddto;
 	}
 
 	//Add Components Value Type
 	public static WebElement CompValType(WebDriver driver) {
-		WebElement CompValType = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[6]/div/sf-decorator[2]/div/label"));
-		return CompValType;
+		WebElement compvaltype = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[6]/div/sf-decorator[2]/div/label"));
+		return compvaltype;
 	}
 	
 	//Add Button
 		public static WebElement SaveButton(WebDriver driver) {
-			WebElement SaveButton = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[2]/a[1]"));
-			return SaveButton;
+			WebElement savebutton = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[2]/a[1]"));
+			return savebutton;
 		}
 }

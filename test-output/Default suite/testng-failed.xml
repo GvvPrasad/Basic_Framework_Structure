@@ -6,7 +6,7 @@
       <class name="Test_Scripts.Main_Test_Script">
         <methods>
           <include name="TearDown"/>
-          <include name="AddEmploye"/>
+          <include name="SalComp"/>
           <include name="SetUp"/>
         </methods>
       </class> <!-- Test_Scripts.Main_Test_Script -->

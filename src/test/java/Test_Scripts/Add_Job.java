@@ -24,7 +24,7 @@ public class Add_Job {
 		Add_Job_Locators.JobTitle(driver).click();
 		setup.info("Job Title Tab Selected");
 
-		for (int i=0; i<= Sfile.getLastRowNum(); i++) {
+		for (int i=0; i<=Sfile.getLastRowNum(); i++) {
 
 			Main_Test_Script.Wait();
 			try {
