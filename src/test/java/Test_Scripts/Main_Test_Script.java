@@ -107,14 +107,6 @@ public class Main_Test_Script {
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
 
-	@Test(priority=4)
-	public static void SalComp() throws InterruptedException, IOException {
-		//Get Sheet
-		Sfile = WBfile.getSheetAt(2);
-		setup.info("Salarey Data Found");
-		Sal_Comp.SalComp(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
-	}
-
 	@AfterTest
 	public static void TearDown() {
 		driver.close();
