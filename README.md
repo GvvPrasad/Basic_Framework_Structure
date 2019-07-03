@@ -19,8 +19,11 @@ This Framework and Code are written according to the above Website
 
 ### Project Structure
 The Web Application URL and the Browser details are stored in config.properties file
+
 Locators of input field are stored in a seperate class file in "Locators" Package
+
 Input Field values are stored in Excle in "Excel_File" Floder
+
 Test Script are stored in "Test_Script" Packages
 
 ### Project WorkFlow  
@@ -33,7 +36,7 @@ Main_Test_Script.java in Test_Script Packages is the main test script file which
 	- Second - Input field value/user data is taken from Excel file
 	- Third - Writing back Testcase result in Excel
 4.  Closing the Web Application
-5.  Generating the HTML Report of overall Test
+5.  Generating the HTML Report of overall the Test
 
 
 
