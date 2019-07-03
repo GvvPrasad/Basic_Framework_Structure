@@ -29,9 +29,9 @@ Main_Test_Script.java in Test_Script Packages is the main test script file which
 1.  First - Necessary configurations are made for generating Reports, Screenshot and getting Excel Data 
 2.  Second - It get the information about Web Application and Browser from config.properties file 
 3.  Third - It run the Test Case/Test Script file
-	3.1  First - It get/find the Input Field details from "Locators" file
-	3.2  Second - Input field value/user data is taken from Excel file
-	3.3  Third - Writing back Testcase result in Excel
+	3.1.   First - It get/find the Input Field details from "Locators" file
+	3.2.  Second - Input field value/user data is taken from Excel file
+	3.3.  Third - Writing back Testcase result in Excel
 4.  Closing the Web Application
 5.  Generating the HTML Report of overall Test
 
