@@ -9,12 +9,14 @@ public class Login_Locators {
 	//User Name
 	public static WebElement UserName(WebDriver driver) {
 		WebElement userid = driver.findElement(By.id("txtUsername"));
+		userid.clear();
 		return userid;
 	}
 
 	//Password
 	public static WebElement PassWord(WebDriver driver) {
 		WebElement password = driver.findElement(By.id("txtPassword"));
+		password.clear();
 		return password;
 	}
 

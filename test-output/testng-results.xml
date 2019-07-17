@@ -2,35 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="54458" started-at="2019-06-25T06:02:47Z" finished-at="2019-06-25T06:03:42Z">
+  <suite name="Default suite" duration-ms="36396" started-at="2019-07-17T15:03:38Z" finished-at="2019-07-17T15:04:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="54458" started-at="2019-06-25T06:02:47Z" finished-at="2019-06-25T06:03:42Z">
+    <test name="Default test" duration-ms="36396" started-at="2019-07-17T15:03:38Z" finished-at="2019-07-17T15:04:14Z">
       <class name="Test_Scripts.Main_Test_Script">
-        <test-method status="PASS" signature="SetUp()[pri:0, instance:Test_Scripts.Main_Test_Script@57baeedf]" name="SetUp" is-config="true" duration-ms="10372" started-at="2019-06-25T06:02:47Z" finished-at="2019-06-25T06:02:58Z">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:Test_Scripts.Main_Test_Script@5442a311]" name="SetUp" is-config="true" duration-ms="16310" started-at="2019-07-17T15:03:38Z" finished-at="2019-07-17T15:03:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method status="PASS" signature="Wait()[pri:0, instance:Test_Scripts.Main_Test_Script@57baeedf]" name="Wait" duration-ms="18" started-at="2019-06-25T06:02:58Z" finished-at="2019-06-25T06:02:58Z">
+        <test-method status="PASS" signature="Wait()[pri:0, instance:Test_Scripts.Main_Test_Script@5442a311]" name="Wait" duration-ms="15" started-at="2019-07-17T15:03:54Z" finished-at="2019-07-17T15:03:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Wait -->
-        <test-method status="PASS" signature="Set_Excel()[pri:1, instance:Test_Scripts.Main_Test_Script@57baeedf]" name="Set_Excel" duration-ms="632" started-at="2019-06-25T06:02:58Z" finished-at="2019-06-25T06:02:58Z">
+        <test-method status="PASS" signature="Set_Excel()[pri:1, instance:Test_Scripts.Main_Test_Script@5442a311]" name="Set_Excel" duration-ms="576" started-at="2019-07-17T15:03:54Z" finished-at="2019-07-17T15:03:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Set_Excel -->
-        <test-method status="PASS" signature="Login()[pri:2, instance:Test_Scripts.Main_Test_Script@57baeedf]" name="Login" duration-ms="10127" started-at="2019-06-25T06:02:58Z" finished-at="2019-06-25T06:03:09Z">
+        <test-method status="PASS" signature="Login()[pri:2, instance:Test_Scripts.Main_Test_Script@5442a311]" name="Login" duration-ms="9924" started-at="2019-07-17T15:03:55Z" finished-at="2019-07-17T15:04:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="AddVacency()[pri:3, instance:Test_Scripts.Main_Test_Script@57baeedf]" name="AddVacency" duration-ms="30777" started-at="2019-06-25T06:03:09Z" finished-at="2019-06-25T06:03:39Z">
+        <test-method status="PASS" signature="AddVacency()[pri:3, instance:Test_Scripts.Main_Test_Script@5442a311]" name="AddVacency" duration-ms="9527" started-at="2019-07-17T15:04:04Z" finished-at="2019-07-17T15:04:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddVacency -->
-        <test-method status="PASS" signature="TearDown()[pri:0, instance:Test_Scripts.Main_Test_Script@57baeedf]" name="TearDown" is-config="true" duration-ms="2490" started-at="2019-06-25T06:03:39Z" finished-at="2019-06-25T06:03:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TearDown -->
       </class> <!-- Test_Scripts.Main_Test_Script -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

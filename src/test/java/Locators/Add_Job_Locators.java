@@ -42,7 +42,7 @@ public class Add_Job_Locators {
 		return enterjobdescription;
 	}
 
-	//Save Job
+	//Save/submit Job
 	public static WebElement SaveJob(WebDriver driver) {
 		WebElement savejob = driver.findElement(By.xpath("//*[@id=\"modal1\"]/form/div[2]/a[1]"));
 		return savejob;

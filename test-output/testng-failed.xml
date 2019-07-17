@@ -5,8 +5,8 @@
     <classes>
       <class name="Test_Scripts.Main_Test_Script">
         <methods>
+          <include name="AddVacency"/>
           <include name="TearDown"/>
-          <include name="SalComp"/>
           <include name="SetUp"/>
         </methods>
       </class> <!-- Test_Scripts.Main_Test_Script -->

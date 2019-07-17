@@ -19,7 +19,7 @@ public class PropertiesFile {
 		GetProperties();
 	}
 
-	//Get Data from properties file
+	//Get Data from config.properties file
 	public static void GetProperties() {
 		try {
 			InputStream Input = new FileInputStream(ProjectPath+"//src//test//java//Config//Config.properties");

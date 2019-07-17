@@ -46,7 +46,7 @@ public class Main_Test_Script {
 
 	@BeforeTest
 	public static void SetUp() {
-		//start reporters
+		//Report file
 		htmlReporter = new ExtentHtmlReporter(ProjectPath+"//Reports//report.html");
 
 		// create ExtentReports and attach reporter(s)
@@ -70,43 +70,56 @@ public class Main_Test_Script {
 			WebDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
 			driver = new FirefoxDriver();
 		}
-		setup.info("Browser Opened");
+		setup.pass("Browser Opened");
 
-		//Opening the page
+		//Opening the web page
 		driver.get(Url);
 		driver.manage().window().maximize();
 	}
-
+	
+	//Wait Method
 	@Test(priority=0)
 	public static void Wait() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-
+	
+	//Setting Excel
 	@Test(priority=1)
 	public static void Set_Excel() throws IOException {
+		
 		//Go To  Excel file
 		FileInputStream Rfile = new FileInputStream(ProjectPath+"//Excel_File//TestData.xlsx");
+		
 		//Get xlsx Excel File (Workbook)
 		WBfile = new XSSFWorkbook(Rfile);
-		setup.info("Excel File Found");
+		setup.pass("Excel File Found");
 	}
-
+	
+	//Login Method
 	@Test(priority=2)
 	public static void Login() throws InterruptedException, IOException {
+		
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(0);		
 		setup.info("Login Data Found");
+		
+		//Login  
 		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
-
+	
+	//Adding Job Method
 	@Test(priority=3)
 	public static void AddVacency() throws InterruptedException, IOException {
+		
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(1);
 		setup.info("Job Data Found");
+		
+		//Add Job
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
-
+	
+	/*Closing Browser
 	@AfterTest
 	public static void TearDown() {
 		driver.close();
@@ -114,5 +127,5 @@ public class Main_Test_Script {
 
 		// calling flush writes everything to the log file
 		extent.flush();
-	}
+	}*/
 }

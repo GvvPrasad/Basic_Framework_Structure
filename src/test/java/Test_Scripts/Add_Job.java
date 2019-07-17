@@ -14,42 +14,58 @@ import multiScreenShot.MultiScreenShot;
 public class Add_Job {
 
 	public static void AddJob(WebDriver driver, XSSFSheet Sfile, XSSFCell cell, ExtentTest setup, String FilePath, XSSFWorkbook WBfile, MultiScreenShot multiScreens) throws InterruptedException, IOException {
-
+		
+		
+		//Select admin Tab
 		Add_Job_Locators.AdminTab(driver).click();
 		setup.info("Admin Tab Selected");
-
+		
+		//Select Job Tab
 		Add_Job_Locators.Job(driver).click();
 		setup.info("Job Tab Selected");
-
+		
+		//Select Title Tab
 		Add_Job_Locators.JobTitle(driver).click();
 		setup.info("Job Title Tab Selected");
-
+		
+		Main_Test_Script.Wait();
+		
+		//Looping in the excel for data 
 		for (int i=0; i<=Sfile.getLastRowNum(); i++) {
-
-			Main_Test_Script.Wait();
+			
 			try {
+				//Get addjob web locators from locators file
 				Add_Job_Locators.AddJob(driver).click();
 			} catch (Exception e) {
+				//If an error occur take screenshot 
 				multiScreens.multiScreenShot(driver);
-			}			
-			setup.info("Add Job");
+			}
+			
+			setup.info("Add Job clicked");
 			Main_Test_Script.Wait();
-
-			//Add Job Title
+						
+			//Import data for job title from excel
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
+			
+			//Send data from Excel for job title
 			Add_Job_Locators.EnterJobTitle(driver).sendKeys(cell.getStringCellValue());
 			setup.info("Entered Job Title");
 
-			//Add Job Description
+			//Import data for job description from excel
 			cell = Sfile.getRow(i).getCell(1);
 			cell.setCellType(CellType.STRING);
+			
+			//Send data from Excel for job description
 			Add_Job_Locators.EnterJobDescription(driver).sendKeys(cell.getStringCellValue());
 			setup.info("Entered Job Description");
+			
+			//Submit job
 			Add_Job_Locators.SaveJob(driver).click();
-			setup.info("Saved");
-			Thread.sleep(10000);
-		}
+			
+			
+			//Verifying add job is success or not
+			
+		}	
 	}
-
 }
