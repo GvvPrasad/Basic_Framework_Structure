@@ -76,12 +76,16 @@ public class Main_Test_Script {
 		driver.get(Url);
 		driver.manage().window().maximize();
 	}
+
+	
 	
 	//Wait Method
 	@Test(priority=0)
 	public static void Wait() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
+
+	
 	
 	//Setting Excel
 	@Test(priority=1)
@@ -94,6 +98,8 @@ public class Main_Test_Script {
 		WBfile = new XSSFWorkbook(Rfile);
 		setup.pass("Excel File Found");
 	}
+
+	
 	
 	//Login Method
 	@Test(priority=2)
@@ -106,20 +112,24 @@ public class Main_Test_Script {
 		//Login  
 		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
+
+	
 	
 	//Adding Job Method
 	@Test(priority=3)
-	public static void AddVacency() throws InterruptedException, IOException {
+	public static void AddingJob() throws InterruptedException, IOException {
 		
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(1);
-		setup.info("Job Data Found");
+		setup.info("Job Sheet Found");
 		
 		//Add Job
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
 	
-	/*Closing Browser
+	
+	
+	//Closing Browser
 	@AfterTest
 	public static void TearDown() {
 		driver.close();
@@ -127,5 +137,5 @@ public class Main_Test_Script {
 
 		// calling flush writes everything to the log file
 		extent.flush();
-	}*/
+	}
 }

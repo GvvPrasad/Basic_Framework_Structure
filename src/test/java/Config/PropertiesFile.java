@@ -14,12 +14,9 @@ public class PropertiesFile {
 	static Properties Prop = new Properties();
 	static String ProjectPath = System.getProperty("user.dir");
 
-	@Test(priority=1)
-	public static void Call() {
-		GetProperties();
-	}
 
 	//Get Data from config.properties file
+	@Test(priority=0)
 	public static void GetProperties() {
 		try {
 			InputStream Input = new FileInputStream(ProjectPath+"//src//test//java//Config//Config.properties");

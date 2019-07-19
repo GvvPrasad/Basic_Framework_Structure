@@ -17,12 +17,7 @@ import multiScreenShot.MultiScreenShot;
 public class Login_Test_Script {
 
 	public static void SignIn(WebDriver driver, XSSFSheet Sfile, XSSFCell cell, ExtentTest setup, String FilePath, XSSFWorkbook WBfile, MultiScreenShot multiScreens) throws InterruptedException, IOException {
-		
-		//Local VAriable
-		String ExpectedUrl = "https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard";
-		String ActualUrl = driver.getCurrentUrl();
-		String message;
-		
+			
 		//Looping in the excel for data 
 		for(int i=0; i<= Sfile.getLastRowNum(); i++)
 		{
@@ -30,23 +25,27 @@ public class Login_Test_Script {
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
 			
-			//Send username data from Excel
-			Login_Locators.UserName(driver).sendKeys(cell.getStringCellValue());
+			//Send username 
+			Login_Locators.UserId(driver).sendKeys(cell.getStringCellValue());
 
 			// Import data for password from Excel.
 			cell = Sfile.getRow(i).getCell(1);
 			cell.setCellType(CellType.STRING);
 						
-			//Send password data from Excel
+			//Send password 
 			Login_Locators.PassWord(driver).sendKeys(cell.getStringCellValue());
 
 			//Click submit
 			//Get submit web locators from locators file
-			Login_Locators.Submit(driver).click();
+			Login_Locators.LoginSubmit(driver).click();
 			
 			setup.info("Entered and Submitted login details");
 			Thread.sleep(5000);			
 			
+			//Local VAriable
+			String ExpectedUrl = "https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard";
+			String ActualUrl = driver.getCurrentUrl();
+			String message;
 			
 			//Login verification
 			if (ExpectedUrl.equalsIgnoreCase(ActualUrl)) {
@@ -56,6 +55,8 @@ public class Login_Test_Script {
 			} else {
 				message = "Fail";
 				setup.fail("Login Failed");
+				//If an error occur take screenshot 
+				multiScreens.multiScreenShot(driver);
 			}
 
 			

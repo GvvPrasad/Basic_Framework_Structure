@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Login_Locators {
-
+//Login Locators
+public class Login_Locators{
 	//User Name
-	public static WebElement UserName(WebDriver driver) {
+	public static WebElement UserId(WebDriver driver) {
 		WebElement userid = driver.findElement(By.id("txtUsername"));
 		userid.clear();
 		return userid;
@@ -21,8 +21,13 @@ public class Login_Locators {
 	}
 
 	//Submit
-	public static WebElement Submit(WebDriver driver) {
-		WebElement submit = driver.findElement(By.id("btnLogin"));
-		return submit;
+	public static WebElement LoginSubmit(WebDriver driver) {
+		WebElement loginsubmit = driver.findElement(By.id("btnLogin"));
+		return loginsubmit;
 	}
 }
+
+
+
+
+
