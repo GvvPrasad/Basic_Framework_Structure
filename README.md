@@ -18,6 +18,20 @@ This Framework and Code are written according to the above Website
 7.  multiscreenshot
 
 ### Project Structure
+
+
+```
+	Root
+    ├── src
+    │   ├── config
+    │   ├── Locators
+    │   └── Test Scripts
+    │── Excel Files
+    │── Reports
+    └── Screenshots
+```
+
+
 The Web Application URL and the Browser details are stored in config.properties file
 
 Locators of input field are stored in a seperate class file in "Locators" Package
