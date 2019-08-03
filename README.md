@@ -21,7 +21,7 @@ This Framework and Code are written according to the above Website
 
 
 ```
-	Root
+Root
     ├── src
     │   ├── config
     │   ├── Locators
