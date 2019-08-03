@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentTest;
 
-import Locators.Adding_Job_Locators;
+import Locators.All_Locators;
 import multiScreenShot.MultiScreenShot;
 
 public class Add_Job {
@@ -19,17 +19,17 @@ public class Add_Job {
 
 
 		//Select admin Tab
-		Adding_Job_Locators.AdminTab(driver).click();
+		All_Locators.AdminTab(driver).click();
 		setup.info("Admin Tab Selected");
 
 
 		//Select Job Tab
-		Adding_Job_Locators.JobTab(driver).click();
+		All_Locators.JobTab(driver).click();
 		setup.info("Job Tab Selected");
 
 
 		//Select Title Tab
-		Adding_Job_Locators.JobTitlesTab(driver).click();
+		All_Locators.JobTitlesTab(driver).click();
 		setup.info("Job Title Tab Selected");
 
 		Main_Test_Script.Wait();
@@ -40,7 +40,7 @@ public class Add_Job {
 
 			try {
 				//Get addjob web locators from locators file
-				Adding_Job_Locators.AddJob(driver).click();
+				All_Locators.AddJob(driver).click();
 				setup.pass("Adding Job");
 				Main_Test_Script.Wait();
 			} catch (Exception e) {
@@ -54,7 +54,7 @@ public class Add_Job {
 			cell.setCellType(CellType.STRING);
 
 			//Send data 
-			Adding_Job_Locators.JobTitle(driver).sendKeys(cell.getStringCellValue());
+			All_Locators.JobTitle(driver).sendKeys(cell.getStringCellValue());
 			setup.info("Entered Job Title");
 
 
@@ -77,11 +77,11 @@ public class Add_Job {
 				cell.setCellType(CellType.STRING);
 
 				//Send data 
-				Adding_Job_Locators.JobDescription(driver).sendKeys(cell.getStringCellValue());
+				All_Locators.JobDescription(driver).sendKeys(cell.getStringCellValue());
 				setup.info("Entered Job Description");
 
 				//Submit job
-				Adding_Job_Locators.SaveJob(driver).click();
+				All_Locators.SaveJob(driver).click();
 				setup.pass("Job Submitted");
 				message = "Success";
 				Thread.sleep(5000);

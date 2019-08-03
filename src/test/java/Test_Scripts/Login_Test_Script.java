@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentTest;
 
-import Locators.Login_Locators;
+import Locators.All_Locators;
 import multiScreenShot.MultiScreenShot;
 
 public class Login_Test_Script {
@@ -26,18 +26,18 @@ public class Login_Test_Script {
 			cell.setCellType(CellType.STRING);
 			
 			//Send username 
-			Login_Locators.UserId(driver).sendKeys(cell.getStringCellValue());
+			All_Locators.UserId(driver).sendKeys(cell.getStringCellValue());
 
 			// Import data for password from Excel.
 			cell = Sfile.getRow(i).getCell(1);
 			cell.setCellType(CellType.STRING);
 						
 			//Send password 
-			Login_Locators.PassWord(driver).sendKeys(cell.getStringCellValue());
+			All_Locators.PassWord(driver).sendKeys(cell.getStringCellValue());
 
 			//Click submit
 			//Get submit web locators from locators file
-			Login_Locators.LoginSubmit(driver).click();
+			All_Locators.LoginSubmit(driver).click();
 			
 			setup.info("Entered and Submitted login details");
 			Thread.sleep(5000);			
