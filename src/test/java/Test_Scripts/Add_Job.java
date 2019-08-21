@@ -17,43 +17,29 @@ public class Add_Job {
 
 	public static void AddJob(WebDriver driver, XSSFSheet Sfile, XSSFCell cell, ExtentTest setup, String FilePath, XSSFWorkbook WBfile, MultiScreenShot multiScreens) throws InterruptedException, IOException {
 
-
-		//Select admin Tab
 		All_Locators.AdminTab(driver).click();
 		setup.info("Admin Tab Selected");
-
-
-		//Select Job Tab
 		All_Locators.JobTab(driver).click();
 		setup.info("Job Tab Selected");
-
-
-		//Select Title Tab
 		All_Locators.JobTitlesTab(driver).click();
 		setup.info("Job Title Tab Selected");
-
 		Main_Test_Script.Wait();
-
 
 		//Looping in the excel for data 
 		for (int i=0; i<=Sfile.getLastRowNum(); i++) {
-
 			try {
-				//Get addjob web locators from locators file
 				All_Locators.AddJob(driver).click();
 				setup.pass("Adding Job");
 				Main_Test_Script.Wait();
 			} catch (Exception e) {
-				//If an error occur take screenshot 
 				multiScreens.multiScreenShot(driver);
 			}
 
 
-			//Import data for job title from excel
+			//Import & send data for job title from excel
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
-
-			//Send data 
+			All_Locators.JobTitle(driver).clear();
 			All_Locators.JobTitle(driver).sendKeys(cell.getStringCellValue());
 			setup.info("Entered Job Title");
 
@@ -62,29 +48,26 @@ public class Add_Job {
 			String AlertMessagBlock = driver.findElement(By.className("help-block")).getText();
 			String AlertMessg = "Already exists";
 			String message;
-			
 
 			if (AlertMessagBlock.equalsIgnoreCase(AlertMessg)) {
-
-				setup.fail("Job Title Already exit");
+				message = "Job Title Already exit";
 				multiScreens.multiScreenShot(driver);
-				message = "Fail";
-
+				setup.fail("Job Title Already exit");			
+				All_Locators.CancelJob(driver).click();
+				Main_Test_Script.Wait();
 			}else {
-
-				//Import data for job description from excel
+				//Import & send data for job description from excel
 				cell = Sfile.getRow(i).getCell(1);
 				cell.setCellType(CellType.STRING);
-
-				//Send data 
+				All_Locators.JobDescription(driver).clear();
 				All_Locators.JobDescription(driver).sendKeys(cell.getStringCellValue());
 				setup.info("Entered Job Description");
 
 				//Submit job
 				All_Locators.SaveJob(driver).click();
-				setup.pass("Job Submitted");
-				message = "Success";
-				Thread.sleep(5000);
+				message = "Job Submitted";
+				setup.pass("Job Submitted");			
+				Main_Test_Script.Wait();
 			}
 
 			// Create cell in excel where message needs to be written.
@@ -95,7 +78,6 @@ public class Add_Job {
 
 			//write message into excel
 			WBfile.write(fileOutput);
-
 		}	
 	}
 }

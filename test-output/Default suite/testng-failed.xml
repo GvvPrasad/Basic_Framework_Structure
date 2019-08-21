@@ -6,9 +6,8 @@
       <class name="Test_Scripts.Main_Test_Script">
         <methods>
           <include name="TearDown"/>
-          <include name="AddingJob"/>
           <include name="SetUp"/>
-          <include name="Login"/>
+          <include name="Leave"/>
         </methods>
       </class> <!-- Test_Scripts.Main_Test_Script -->
     </classes>

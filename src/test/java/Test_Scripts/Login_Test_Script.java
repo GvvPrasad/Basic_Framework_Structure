@@ -17,49 +17,44 @@ import multiScreenShot.MultiScreenShot;
 public class Login_Test_Script {
 
 	public static void SignIn(WebDriver driver, XSSFSheet Sfile, XSSFCell cell, ExtentTest setup, String FilePath, XSSFWorkbook WBfile, MultiScreenShot multiScreens) throws InterruptedException, IOException {
-			
+
 		//Looping in the excel for data 
 		for(int i=0; i<= Sfile.getLastRowNum(); i++)
 		{
-			// Import data for Email from Excel.
+			// Import & send data for Email from Excel.
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
-			
-			//Send username 
+			All_Locators.UserId(driver).clear();
 			All_Locators.UserId(driver).sendKeys(cell.getStringCellValue());
 
-			// Import data for password from Excel.
+			// Import  & send data for password from Excel.
 			cell = Sfile.getRow(i).getCell(1);
 			cell.setCellType(CellType.STRING);
-						
-			//Send password 
+			All_Locators.PassWord(driver).clear();
 			All_Locators.PassWord(driver).sendKeys(cell.getStringCellValue());
 
-			//Click submit
-			//Get submit web locators from locators file
-			All_Locators.LoginSubmit(driver).click();
-			
-			setup.info("Entered and Submitted login details");
-			Thread.sleep(5000);			
-			
-			//Local VAriable
+			//submit
+			All_Locators.LoginSubmit(driver).click();	
+			setup.info("Submitted login details");
+			Main_Test_Script.Wait();		
+
+
+			//Local Variable
 			String ExpectedUrl = "https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard";
 			String ActualUrl = driver.getCurrentUrl();
 			String message;
-			
+
 			//Login verification
 			if (ExpectedUrl.equalsIgnoreCase(ActualUrl)) {
-				//message needs to be written in Excel.
 				message = "Pass";
 				setup.pass("Login Successed");
 			} else {
 				message = "Fail";
-				setup.fail("Login Failed");
-				//If an error occur take screenshot 
+				setup.fail("Login Failed"); 
 				multiScreens.multiScreenShot(driver);
 			}
 
-			
+
 			// Create cell in excel where message needs to be written.
 			Sfile.getRow(i).createCell(2).setCellValue(message);
 

@@ -30,7 +30,6 @@ public class PropertiesFile {
 			System.out.println(e.getCause());
 			e.printStackTrace();
 		}
-
 	}
 	// End of getting data from properties file
 }
