@@ -102,8 +102,8 @@ public class Main_Test_Script {
 
 	//Leave
 	@Test(priority = 3)
-	public static void Leave() throws InterruptedException{
-		Apply_Leave.ApplyLeave(driver, setup);
+	public static void Salary() throws InterruptedException{
+		
 	}
 
 
