@@ -74,7 +74,7 @@ public class Main_Test_Script {
 		FileInputStream Rfile = new FileInputStream(ProjectPath+"//Excel_File//TestData.xlsx");
 		//Get xlsx Excel File (Workbook)
 		WBfile = new XSSFWorkbook(Rfile);
-		setup.pass("Excel File Found");
+		setup.info("Excel File Found");
 	}
 
 
@@ -83,26 +83,31 @@ public class Main_Test_Script {
 	public static void Login() throws InterruptedException, IOException {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(0);		
-		setup.info("Login Data Found");
+		setup.info("Login Data Sheet Found");
 		//Login  
 		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
 
 
-	//Adding Job 
+	/*Adding Job 
 	@Test(priority=2)
 	public static void AddingJob() throws InterruptedException, IOException {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(1);
-		setup.info("Job Sheet Found");
+		setup.info("Job Dta Sheet Found");
 		//Add Job
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
+	*/
 
-
-	//Leave
+	//Salary Comp
 	@Test(priority = 3)
-	public static void Salary() throws InterruptedException{
+	public static void SalaryComponents() throws IOException, InterruptedException{
+		//Get Sheet
+		Sfile = WBfile.getSheetAt(2);
+		setup.info("Salary Sheet Found");
+		//Add Salary Comp
+		Salary_Comp.SalaryComp(driver, Sfile, setup, multiScreens, cell, BrowserName, WBfile);
 		
 	}
 

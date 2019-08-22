@@ -34,7 +34,24 @@ public class All_Locators{
 
 
 	//Salary Components
-	
+	public static WebElement SalaryComp(WebDriver driver) {WebElement salarycomp = driver.findElement(By.xpath("//*[@id=\"menu_admin_viewSalaryComponentList\"]/span[2]"));
+	return salarycomp;}
+	public static WebElement SalaryAdd(WebDriver driver) {WebElement salaryadd = driver.findElement(By.xpath("//*[@id=\"salaryComponentDiv\"]/div/a/i"));
+	return salaryadd;}
+	public static WebElement CompName(WebDriver driver) {WebElement compname = driver.findElement(By.xpath("//*[@id=\"name\"]"));
+	return compname;}
+	public static WebElement ErrorBox(WebDriver driver) {WebElement errorbox = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[1]/div/sf-decorator/div/span")); 
+	return errorbox;}
+	public static WebElement Earning(WebDriver driver) {WebElement earning = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[2]/div/sf-decorator/div/ul/li[1]/label"));
+	return earning;}
+	public static WebElement CTC(WebDriver driver) {WebElement ctc = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[4]/div/sf-decorator[2]/div/label"));
+	return ctc;}
+	public static WebElement Amount(WebDriver driver) {WebElement amount = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[1]/div/materializecss-decorator[6]/div/sf-decorator[1]/div/label"));
+	return amount;}
+	public static WebElement SaveSal(WebDriver driver) {WebElement savesal = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[2]/a[1]"));
+	return savesal;}
+	public static WebElement CancelSal(WebDriver driver) {WebElement cancelsal = driver.findElement(By.xpath("//*[@id=\"editSalaryComponentModal\"]/form/div[2]/a[2]"));
+	return cancelsal;}
 	
 
 }
