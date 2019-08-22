@@ -36,9 +36,9 @@ public class All_Locators{
 	//Leave
 	public static WebElement LeaveTab(WebDriver driver) {WebElement leavetab = driver.findElement(By.xpath("//*[@id=\"menu_leave_viewLeaveModule\"]/a/span[2]"));
 	return leavetab;}
-	public static WebElement ApplyTab(WebDriver driver) {WebElement applytab = driver.findElement(By.xpath("//*[@id=\"menu_leave_applyLeave\"]/span[2]"));
+	public static WebElement ApplyTab(WebDriver driver) {WebElement applytab = driver.findElement(By.xpath("//*[@id=\"menu_leave_applyLeave\"]"));
 	return applytab;}
-	public static WebElement LeaveType(WebDriver driver) {WebElement leavetype = driver.findElement(By.xpath("//*[@id=\"leaveType_inputfileddiv\"]"));
+	public static WebElement LeaveType(WebDriver driver) {WebElement leavetype = driver.findElement(By.xpath("//*[@id=\"leaveType_inputfileddiv\"]/div/input"));
 	return leavetype;}
 	//Start date
 	//End Date

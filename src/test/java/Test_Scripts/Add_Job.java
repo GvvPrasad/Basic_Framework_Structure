@@ -23,14 +23,14 @@ public class Add_Job {
 		setup.info("Job Tab Selected");
 		All_Locators.JobTitlesTab(driver).click();
 		setup.info("Job Title Tab Selected");
-		Main_Test_Script.Wait();
+		Thread.sleep(10000);
 
 		//Looping in the excel for data 
 		for (int i=0; i<=Sfile.getLastRowNum(); i++) {
 			try {
 				All_Locators.AddJob(driver).click();
 				setup.pass("Adding Job");
-				Main_Test_Script.Wait();
+				Thread.sleep(5000);
 			} catch (Exception e) {
 				multiScreens.multiScreenShot(driver);
 			}
@@ -54,7 +54,7 @@ public class Add_Job {
 				multiScreens.multiScreenShot(driver);
 				setup.fail("Job Title Already exit");			
 				All_Locators.CancelJob(driver).click();
-				Main_Test_Script.Wait();
+				Thread.sleep(5000);
 			}else {
 				//Import & send data for job description from excel
 				cell = Sfile.getRow(i).getCell(1);
@@ -67,7 +67,7 @@ public class Add_Job {
 				All_Locators.SaveJob(driver).click();
 				message = "Job Submitted";
 				setup.pass("Job Submitted");			
-				Main_Test_Script.Wait();
+				Thread.sleep(5000);
 			}
 
 			// Create cell in excel where message needs to be written.
@@ -78,6 +78,7 @@ public class Add_Job {
 
 			//write message into excel
 			WBfile.write(fileOutput);
-		}	
+			Thread.sleep(5000);
+		}
 	}
 }

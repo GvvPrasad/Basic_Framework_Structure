@@ -36,7 +36,7 @@ public class Login_Test_Script {
 			//submit
 			All_Locators.LoginSubmit(driver).click();	
 			setup.info("Submitted login details");
-			Main_Test_Script.Wait();		
+			Thread.sleep(5000);		
 
 
 			//Local Variable

@@ -1,17 +1,21 @@
 package Test_Scripts;
 
 import org.openqa.selenium.WebDriver;
+import com.aventstack.extentreports.ExtentTest;
+
 import Locators.All_Locators;
 
 public class Apply_Leave {
 
-	public static void ApplyLeave(WebDriver driver){
+	public static void ApplyLeave(WebDriver driver, ExtentTest setup) throws InterruptedException{
 
 		All_Locators.LeaveTab(driver).click();
+		setup.info("Leave Tab Selected");
 		All_Locators.ApplyTab(driver).click();
-		Main_Test_Script.Wait();
-		All_Locators.LeaveType(driver).click();
-		Main_Test_Script.Wait();
+		setup.info("Apply Atb Selected");
+		Thread.sleep(5000);
+		
+		
 		
 	}
 }

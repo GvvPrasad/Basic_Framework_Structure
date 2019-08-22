@@ -16,8 +16,6 @@ import org.testng.annotations.BeforeTest;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -70,13 +68,6 @@ public class Main_Test_Script {
 	}
 
 
-	//Wait Method
-	@Test
-	public static void Wait(){
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	}
-
-
 	//Setting Excel
 	@Test(priority=0)
 	public static void Set_Excel() throws IOException {
@@ -111,8 +102,8 @@ public class Main_Test_Script {
 
 	//Leave
 	@Test(priority = 3)
-	public static void Leave(){
-		Apply_Leave.ApplyLeave(driver);
+	public static void Leave() throws InterruptedException{
+		Apply_Leave.ApplyLeave(driver, setup);
 	}
 
 
