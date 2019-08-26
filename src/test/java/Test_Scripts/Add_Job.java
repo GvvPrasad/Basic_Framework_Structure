@@ -18,11 +18,8 @@ public class Add_Job {
 	public static void AddJob(WebDriver driver, XSSFSheet Sfile, XSSFCell cell, ExtentTest setup, String FilePath, XSSFWorkbook WBfile, MultiScreenShot multiScreens) throws InterruptedException, IOException {
 
 		All_Locators.AdminTab(driver).click();
-		setup.info("Admin Tab Selected");
 		All_Locators.JobTab(driver).click();
-		setup.info("Job Tab Selected");
 		All_Locators.JobTitlesTab(driver).click();
-		setup.info("Job Titles Tab Selected");
 		Thread.sleep(10000);
 
 		//Looping in the excel for data 

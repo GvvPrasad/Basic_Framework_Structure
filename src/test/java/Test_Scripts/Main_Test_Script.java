@@ -82,7 +82,7 @@ public class Main_Test_Script {
 	@Test(priority=1)
 	public static void Login() throws InterruptedException, IOException {
 		//Get Sheet
-		Sfile = WBfile.getSheetAt(0);		
+		Sfile = WBfile.getSheetAt(0);
 		setup.info("Login Data Sheet Found");
 		//Login  
 		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
@@ -94,7 +94,7 @@ public class Main_Test_Script {
 	public static void AddingJob() throws InterruptedException, IOException {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(1);
-		setup.info("Job Dta Sheet Found");
+		setup.info("Job Data Sheet Found");
 		//Add Job
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
@@ -105,9 +105,9 @@ public class Main_Test_Script {
 	public static void SalaryComponents() throws IOException, InterruptedException{
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(2);
-		setup.info("Salary Sheet Found");
+		setup.info("Salary Data Sheet Found");
 		//Add Salary Comp
-		Salary_Comp.SalaryComp(driver, Sfile, setup, multiScreens, cell, BrowserName, WBfile);
+		Salary_Comp.SalaryComp(driver, Sfile, setup, multiScreens, cell, WBfile, FilePath);
 		
 	}
 

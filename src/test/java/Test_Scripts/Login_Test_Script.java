@@ -35,7 +35,6 @@ public class Login_Test_Script {
 
 			//submit
 			All_Locators.LoginSubmit(driver).click();	
-			setup.info("Submitted login details");
 			Thread.sleep(5000);		
 
 
