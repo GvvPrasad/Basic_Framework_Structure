@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="HRMSampleProject" parallel="tests">
+<suite name="HRMSampleProject" >
   <test name="CompleteProcess-chrome">
-  <parameter name="browser" value="chrome">
   		<classes>
   			<class name="Test_Scripts.Main_Test_Script"> <!-- Packagename.classname -->
   			<!-- <methods>
@@ -12,20 +11,6 @@
   				</methods>  -->
   			</class>
   		</classes>
-  	</parameter>
   </test>
   
-  <test name="CompleteProcess-firefox">
-  	<parameter name="browser" value="firefox">
-	  	<classes>
-	  		<class name="Test_Scripts.Main_Test_Script"> <!-- Packagename.classname -->
-	  		<!--<methods>
-	  				<include name="SetUp"></include>
-	  				<include name="Set_Excel"></include>
-	  				<include name="Login"></include>
-	  			</methods> -->
-	  		</class>
-	  	</classes>
-	</parameter>  	
-  </test>
 </suite> <!-- Suite -->

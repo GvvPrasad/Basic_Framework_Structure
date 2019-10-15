@@ -89,7 +89,7 @@ public class Main_Test_Script {
 	}
 
 
-	/*Adding Job 
+	//Adding Job 
 	@Test(priority=2)
 	public static void AddingJob() throws InterruptedException, IOException {
 		//Get Sheet
@@ -98,7 +98,7 @@ public class Main_Test_Script {
 		//Add Job
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
-	*/
+	
 
 	//Salary Comp
 	@Test(priority = 3)
@@ -107,8 +107,7 @@ public class Main_Test_Script {
 		Sfile = WBfile.getSheetAt(2);
 		setup.info("Salary Data Sheet Found");
 		//Add Salary Comp
-		Salary_Comp.SalaryComp(driver, Sfile, setup, multiScreens, cell, WBfile, FilePath);
-		
+		Salary_Comp.SalaryComp(driver, Sfile, setup, multiScreens, cell, WBfile, FilePath);	
 	}
 
 
