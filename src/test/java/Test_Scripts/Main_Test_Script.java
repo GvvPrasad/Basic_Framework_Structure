@@ -16,6 +16,9 @@ import org.testng.annotations.BeforeTest;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -42,17 +45,20 @@ public class Main_Test_Script {
 	static MultiScreenShot multiScreens;
 
 
+
 	@BeforeTest
 	public static void SetUp() {
-		//Report file
-		htmlReporter = new ExtentHtmlReporter(ProjectPath+"//Reports//report.html");
+
 		// create ExtentReports and attach reporter(s)
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		extent = new ExtentReports();
+		//Report file
+		htmlReporter = new ExtentHtmlReporter(ProjectPath+"//Reports//report"+timeStamp+".html");
 		extent.attachReporter(htmlReporter);
 		// creates a toggle for the given test, adds all log events under it    
 		setup = extent.createTest("SetUp");
 		//Setting Multi Screenshot
-		multiScreens = new MultiScreenShot(ProjectPath+"//", "ScreenShots");
+		multiScreens = new MultiScreenShot(ProjectPath+"//Screenshots", timeStamp);
 		//Calling getproperties method in Properties file
 		PropertiesFile.GetProperties();
 		if (BrowserName.equalsIgnoreCase("chrome")) {
@@ -71,7 +77,7 @@ public class Main_Test_Script {
 	//Setting Excel
 	@Test(priority=0)
 	public static void Set_Excel() throws IOException {
-		FileInputStream Rfile = new FileInputStream(ProjectPath+"//Excel_File//TestData.xlsx");
+		FileInputStream Rfile = new FileInputStream(FilePath);
 		//Get xlsx Excel File (Workbook)
 		WBfile = new XSSFWorkbook(Rfile);
 		setup.info("Excel File Found");
@@ -98,7 +104,7 @@ public class Main_Test_Script {
 		//Add Job
 		Add_Job.AddJob(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
-	
+
 
 	//Salary Comp
 	@Test(priority = 3)

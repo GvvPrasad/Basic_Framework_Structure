@@ -7,7 +7,7 @@
         <methods>
           <include name="TearDown"/>
           <include name="SetUp"/>
-          <include name="Login"/>
+          <include name="SalaryComponents"/>
         </methods>
       </class> <!-- Test_Scripts.Main_Test_Script -->
     </classes>
