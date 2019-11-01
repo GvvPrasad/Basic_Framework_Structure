@@ -34,9 +34,9 @@ public class Add_Job {
 
 
 			//Import & send data for job title from excel
+			All_Locators.JobTitle(driver).clear();
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
-			All_Locators.JobTitle(driver).clear();
 			All_Locators.JobTitle(driver).sendKeys(cell.getStringCellValue());
 
 
@@ -53,9 +53,9 @@ public class Add_Job {
 				Thread.sleep(5000);
 			}else {
 				//Import & send data for job description from excel
+				All_Locators.JobDescription(driver).clear();
 				cell = Sfile.getRow(i).getCell(1);
 				cell.setCellType(CellType.STRING);
-				All_Locators.JobDescription(driver).clear();
 				All_Locators.JobDescription(driver).sendKeys(cell.getStringCellValue());
 
 				//Submit job

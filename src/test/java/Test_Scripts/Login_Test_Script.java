@@ -21,16 +21,16 @@ public class Login_Test_Script {
 		//Looping in the excel for data 
 		for(int i=0; i<= Sfile.getLastRowNum(); i++)
 		{
-			// Import & send data for Email from Excel.
+			// Import & send data for Email from Excel
+			All_Locators.UserId(driver).clear();
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
-			All_Locators.UserId(driver).clear();
 			All_Locators.UserId(driver).sendKeys(cell.getStringCellValue());
 
-			// Import  & send data for password from Excel.
+			// Import  & send data for password from Excel
+			All_Locators.PassWord(driver).clear();
 			cell = Sfile.getRow(i).getCell(1);
 			cell.setCellType(CellType.STRING);
-			All_Locators.PassWord(driver).clear();
 			All_Locators.PassWord(driver).sendKeys(cell.getStringCellValue());
 
 			//submit

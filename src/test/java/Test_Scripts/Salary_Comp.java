@@ -36,9 +36,9 @@ public class Salary_Comp {
 			
 
 			//Import & send data for job title from excel
+			All_Locators.CompName(driver).clear();
 			cell = Sfile.getRow(i).getCell(0);
 			cell.setCellType(CellType.STRING);
-			All_Locators.CompName(driver).clear();
 			All_Locators.CompName(driver).sendKeys(cell.getStringCellValue());
 
 			
