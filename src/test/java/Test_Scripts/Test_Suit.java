@@ -27,7 +27,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 
-public class Main_Test_Script {
+public class Test_Suit {
 
 	//Global Variables
 	static WebDriver driver;
@@ -47,18 +47,28 @@ public class Main_Test_Script {
 
 
 	@BeforeTest
-	public static void SetUp() {
+	public static void SetUp() throws IOException {
 
 		// create ExtentReports and attach reporter(s)
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		extent = new ExtentReports();
+
 		//Report file
 		htmlReporter = new ExtentHtmlReporter(ProjectPath+"//Reports//report"+timeStamp+".html");
 		extent.attachReporter(htmlReporter);
+
 		// creates a toggle for the given test, adds all log events under it    
 		setup = extent.createTest("SetUp");
+
 		//Setting Multi Screenshot
 		multiScreens = new MultiScreenShot(ProjectPath+"//Screenshots", timeStamp);
+
+		//Setting Excel
+		FileInputStream Rfile = new FileInputStream(FilePath);
+		//Get xlsx Excel File (Workbook)
+		WBfile = new XSSFWorkbook(Rfile);
+		setup.info("Excel File Found");
+
 		//Calling getproperties method in Properties file
 		PropertiesFile.GetProperties();
 		if (BrowserName.equalsIgnoreCase("chrome")) {
@@ -69,19 +79,11 @@ public class Main_Test_Script {
 			driver = new FirefoxDriver();
 		}
 		setup.pass("Browser Opened");
+
 		driver.get(Url);
 		driver.manage().window().maximize();
 	}
 
-
-	//Setting Excel
-	@Test(priority=0)
-	public static void Set_Excel() throws IOException {
-		FileInputStream Rfile = new FileInputStream(FilePath);
-		//Get xlsx Excel File (Workbook)
-		WBfile = new XSSFWorkbook(Rfile);
-		setup.info("Excel File Found");
-	}
 
 
 	//Login 
@@ -91,7 +93,7 @@ public class Main_Test_Script {
 		Sfile = WBfile.getSheetAt(0);
 		setup.info("Login Data Sheet Found");
 		//Login  
-		Login_Test_Script.SignIn(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
+		Login.SignIn(driver, Sfile, cell, setup, FilePath, WBfile, multiScreens);
 	}
 
 

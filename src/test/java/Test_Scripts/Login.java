@@ -14,7 +14,7 @@ import com.aventstack.extentreports.ExtentTest;
 import Locators.All_Locators;
 import multiScreenShot.MultiScreenShot;
 
-public class Login_Test_Script {
+public class Login {
 
 	public static void SignIn(WebDriver driver, XSSFSheet Sfile, XSSFCell cell, ExtentTest setup, String FilePath, XSSFWorkbook WBfile, MultiScreenShot multiScreens) throws InterruptedException, IOException {
 

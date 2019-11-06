@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="HRMSampleProject" >
-  <test name="CompleteProcess-chrome">
-  		<classes>
-  			<class name="Test_Scripts.Main_Test_Script"> <!-- Packagename.classname -->
-  			<!-- <methods>
-  					<include name="SetUp"></include>
-  					<include name="Set_Excel"></include>
-  					<include name="Login"></include>
-  				</methods>  -->
-  			</class>
-  		</classes>
-  </test>
-  
-</suite> <!-- Suite -->
+<suite name="HRMDempProject" verbose="1">
+	<test name="FullProject">
+		<classes>
+			<class name="Test_Scripts.Test_Suit" />
+			<!-- <methods> 
+			<include name="SetUp"></include> 
+			<include name="Set_Excel"></include> 
+			<include name="Login"></include> </methods> -->
+		</classes>
+	</test>
+</suite>
