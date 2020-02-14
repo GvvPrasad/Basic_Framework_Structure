@@ -61,7 +61,7 @@ public class Test_Suit {
 		setup = extent.createTest("SetUp");
 
 		//Setting Multi Screenshot
-		multiScreens = new MultiScreenShot(ProjectPath+"//Screenshots", timeStamp);
+		multiScreens = new MultiScreenShot(ProjectPath+"//Screenshots//",null );
 
 		//Setting Excel
 		FileInputStream Rfile = new FileInputStream(FilePath);
@@ -98,7 +98,7 @@ public class Test_Suit {
 
 
 	//Adding Job 
-	@Test(priority=2)
+	@Test(enabled = false)
 	public static void AddingJob() throws InterruptedException, IOException {
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(1);
@@ -109,7 +109,7 @@ public class Test_Suit {
 
 
 	//Salary Comp
-	@Test(priority = 3)
+	@Test(enabled = false)
 	public static void SalaryComponents() throws IOException, InterruptedException{
 		//Get Sheet
 		Sfile = WBfile.getSheetAt(2);

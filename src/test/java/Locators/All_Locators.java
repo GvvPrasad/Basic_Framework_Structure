@@ -12,7 +12,12 @@ public class All_Locators{
 	return password;}
 	public static WebElement LoginSubmit(WebDriver driver) {WebElement loginsubmit = driver.findElement(By.id("btnLogin"));
 	return loginsubmit;}
-
+	
+	//Signout
+	public static WebElement SignOutTab(WebDriver driver) {WebElement SignOutTab = driver.findElement(By.id("account-job"));
+	return SignOutTab;}
+	public static WebElement SignOutbtn(WebDriver driver) {WebElement SignOutbtn = driver.findElement(By.id("logoutLink"));
+	return SignOutbtn;}
 
 	//Adding Job 
 	public static WebElement AdminTab(WebDriver driver) {WebElement admintab = driver.findElement(By.xpath("//*[@id=\"menu_admin_viewAdminModule\"]/a"));

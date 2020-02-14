@@ -47,12 +47,16 @@ public class Login {
 			if (ExpectedUrl.equalsIgnoreCase(ActualUrl)) {
 				message = "Pass";
 				setup.pass("Login Successed");
+				All_Locators.SignOutTab(driver).click();
+				Thread.sleep(3000);
+				All_Locators.SignOutbtn(driver).click();
 			} else {
 				message = "Fail";
 				setup.fail("Login Failed"); 
 				multiScreens.multiScreenShot(driver);
 			}
-
+			
+			
 
 			// Create cell in excel where message needs to be written.
 			Sfile.getRow(i).createCell(2).setCellValue(message);

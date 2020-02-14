@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [HRMDempProject]">
-  <test thread-count="5" name="FullProject(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="Test_Scripts.Test_Suit">
         <methods>
           <include name="SetUp"/>
+          <include name="Login"/>
           <include name="TearDown"/>
-          <include name="AddingJob"/>
-          <include name="SalaryComponents"/>
         </methods>
       </class> <!-- Test_Scripts.Test_Suit -->
     </classes>
-  </test> <!-- FullProject(failed) -->
-</suite> <!-- Failed suite [HRMDempProject] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
